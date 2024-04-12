@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:credpal_assessment_app/src/home/presentation/views/home_screen.dart';
 
+import '../../src/menu/presentation/views/menu_page.dart';
 import '../res/colors.dart';
 
 class MainPage extends StatefulWidget {
@@ -19,7 +20,7 @@ class _MainPageState extends State<MainPage> {
     Text('text1'),
     Text('text1'),
     Text('text1'),
-    Text('text1'),
+    const MenuScreen(),
 
   ];
 
