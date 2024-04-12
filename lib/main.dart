@@ -1,5 +1,6 @@
 import 'package:credpal_assessment_app/src/home/presentation/views/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/common/main_page.dart';
 
@@ -13,14 +14,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const HomeScreen(),
+    return ScreenUtilInit(designSize: const Size(360, 730),minTextAdapt: true,
+      splitScreenMode: true,builder: (_, child) {
+        return MaterialApp(
+          title: 'Credpal demo',
+          theme: ThemeData(
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              useMaterial3: true,
+              scaffoldBackgroundColor: Colors.white
+          ),
+          home: const MainPage(),
+        );},
     );
   }
 }
